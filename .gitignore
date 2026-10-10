@@ -21,3 +21,21 @@ cov*/
 transcript*
 sc_dpiheader.h
 vsim.dbg
+
+# Cadence / NC-Sim / Xcelium simulation files
+INCA_libs/
+ncsim.*
+ncvlog.*
+ncelab.*
+*.log
+*.history
+*.key
+waves.shm/
+*.trn
+*.dsn
+
+# Editor and OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*~
