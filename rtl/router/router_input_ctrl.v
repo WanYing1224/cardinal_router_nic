@@ -1,6 +1,8 @@
-/*===================================
-    Router Input Control Module
-=====================================
+/*================================================================================
+    Router_Input_Control Module
+    Description: 2D Mesh Input Controller with Dual Virtual Channel Buffers,
+                 Polarity-Based Time Multiplexing, and X-Y Coordinate Routing.
+==================================================================================
 Signal meaning:
 cw – clockwise direction
 ccw – counter-clockwise direction
@@ -11,7 +13,9 @@ polarity – even/odd clk cycle
 =====================================*/
 
 module router_input_ctrl #(
-    parameter [1:0] PORT_TYPE = 2'd0
+    parameter [1:0] PORT_TYPE = 2'd0,
+    parameter [1:0] MY_X      = 2'd0,
+    parameter [1:0] MY_Y      = 2'd0
 )(
     input wire clk,
     input wire reset,
@@ -25,8 +29,10 @@ module router_input_ctrl #(
     // Internal channel interface
     input wire grant_in,
     output wire [63:0] selected_data_out,
-    output  reg request_cw,     // req_cw
-    output reg request_ccw,     // req_ccw
+    output reg request_north,   // req_north
+    output reg request_south,   // req_south
+    output reg request_east,    // req_east
+    output reg request_west,    // req_west
     output reg request_pe       // req_pe
 );
 
@@ -83,44 +89,36 @@ end
 assign selected_data_out = (polarity == 1'b0) ? buf_even : buf_odd;
 wire active_buf_full = (polarity == 1'b0) ? buf_even_full : buf_odd_full;
 
-// Route / Address Decoder
-always @(*) begin
-    request_cw  = 1'b0;
-    request_ccw = 1'b0;
-    request_pe  = 1'b0;
+// Route / Address Decoder (Dimension-Order X-Y Routing)
+wire [1:0] dest_x = selected_data_out[61:60];
+wire [1:0] dest_y = selected_data_out[59:58];
 
-    if(active_buf_full) begin
-        case (PORT_TYPE)
-            2'd0: begin
-                if (selected_data_out[62] == 1'b0) begin
-                    request_cw = 1'b1;
-                end
-                else begin
-                    request_ccw = 1'b1;
-                end
-            end
-            2'd1: begin
-                if (selected_data_out[55:48] == 8'h00) begin
-                    request_pe = 1'b1;
-                end
-                else begin
-                    request_cw = 1'b1;
-                end
-            end
-            2'd2: begin
-                if (selected_data_out[55:48] == 8'h00) begin
-                    request_pe = 1'b1;
-                end
-                else begin
-                    request_ccw = 1'b1;
-                end
-            end
-            default: begin
-                request_cw  = 1'b0;
-                request_ccw = 1'b0;
-                request_pe  = 1'b0;
-            end
-        endcase
+always @(*) begin
+    request_north = 1'b0;
+    request_south = 1'b0;
+    request_east = 1'b0;
+    request_west = 1'b0;
+    request_pe = 1'b0;
+
+    if (active_buf_full) begin
+        // Route in X dimension first
+        if (dest_x > MY_X) begin
+            request_east = 1'b1;
+        end
+        else if (dest_x < MY_X) begin
+            request_west = 1'b1;
+        end
+        // When X matches, route in Y dimension
+        else if (dest_y > MY_Y) begin
+            request_south = 1'b1;
+        end
+        else if (dest_y < MY_Y) begin
+            request_north = 1'b1;
+        end
+        // Destination node reached
+        else begin
+            request_pe = 1'b1;
+        end
     end
 end
 
