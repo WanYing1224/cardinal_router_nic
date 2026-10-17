@@ -13,9 +13,8 @@ polarity – even/odd clk cycle
 =====================================*/
 
 module router_input_ctrl #(
-    parameter [1:0] PORT_TYPE = 2'd0,
-    parameter [1:0] MY_X      = 2'd0,
-    parameter [1:0] MY_Y      = 2'd0
+    parameter [1:0] MY_X = 2'd0,
+    parameter [1:0] MY_Y = 2'd0
 )(
     input wire clk,
     input wire reset,
