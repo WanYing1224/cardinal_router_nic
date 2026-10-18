@@ -33,6 +33,7 @@ ncelab.*
 waves.shm/
 *.trn
 *.dsn
+xcelium.d/
 
 # Editor and OS junk
 .DS_Store
