@@ -1,0 +1,34 @@
+================================================================================
+         EE577B Phase 1: Standalone Router Node Verification Report             
+         DUT Coordinate: (1, 1) | Target Clock: 250MHz (4.0ns)             
+================================================================================
+
+[STATUS] Reset de-asserted at time 20000. Initial polarity = 0
+
+--- Test Case 1: Straight X-Routing (Left -> Right) ---
+[PASS] Test: to Right (X-Dir)
+
+--- Test Case 2: Turn Routing (Left -> Down) ---
+[PASS] Test: eft to Down Turn
+
+--- Test Case 3: Ejection to Local PE (Up -> PE) ---
+[PASS] Test: p to PE Ejection
+
+--- Test Case 4: Backpressure Handling on Right Port ---
+[PASS] Backpressure asserted: right_so correctly suppressed while right_ro=0
+[PASS] Test: Release Delivery
+
+--- Test Case 5: Contention & Rotating Priority (PE vs Left -> Down) ---
+[PASS] Contention Phase 1 Serviced: PE Packet (180000051111aaaa)
+[PASS] Contention Phase 2 Serviced: Left Packet (180000042222bbbb)
+
+================================================================================
+                           VERIFICATION SUMMARY                                 
+================================================================================
+ Total Tests Executed : 7
+ Tests Passed         : 7
+ Tests Failed         : 0
+
+ OVERALL STATUS: >>> ALL TESTS PASSED SUCCESSFULLY <<< 
+
+================================================================================
