@@ -18,23 +18,23 @@ module router_output_ctrl (
 
     // Internal crossbar data from candidate input controllers
     input wire [63:0] data_in_pe,
-    input wire [63:0] data_in_north,
-    input wire [63:0] data_in_south,
-    input wire [63:0] data_in_east,
-    input wire [63:0] data_in_west,
+    input wire [63:0] data_in_up,
+    input wire [63:0] data_in_down,
+    input wire [63:0] data_in_right,
+    input wire [63:0] data_in_left,
 
     // Requests from candidate input controllers
-    input wire req_in_north,
-    input wire req_in_south,
-    input wire req_in_east,
-    input wire req_in_west,
+    input wire req_in_up,
+    input wire req_in_down,
+    input wire req_in_right,
+    input wire req_in_left,
     input wire req_in_pe,
 
     // Grants back to candidate input controllers
-    output reg grant_out_north,
-    output reg grant_out_south,
-    output reg grant_out_east,
-    output reg grant_out_west,
+    output reg grant_out_up,
+    output reg grant_out_down,
+    output reg grant_out_right,
+    output reg grant_out_left,
     output reg grant_out_pe,
 
     // External link interface
@@ -45,10 +45,10 @@ module router_output_ctrl (
 
 // Priority State Encoding
 localparam [2:0] PRIO_PE = 3'd0;
-localparam [2:0] PRIO_NORTH = 3'd1;
-localparam [2:0] PRIO_SOUTH = 3'd2;
-localparam [2:0] PRIO_EAST = 3'd3;
-localparam [2:0] PRIO_WEST = 3'd4;
+localparam [2:0] PRIO_UP = 3'd1;
+localparam [2:0] PRIO_DOWN = 3'd2;
+localparam [2:0] PRIO_RIGHT = 3'd3;
+localparam [2:0] PRIO_LEFT = 3'd4;
 
 // Rotating Arbiter & Grant Generation
 reg [63:0] buf_even, buf_odd;
@@ -60,79 +60,79 @@ wire [2:0] current_priority = (polarity == 1'b0) ? priority_even : priority_odd;
 
 always @(*) begin
     grant_out_pe    = 1'b0;
-    grant_out_north = 1'b0;
-    grant_out_south = 1'b0;
-    grant_out_east  = 1'b0;
-    grant_out_west  = 1'b0;
+    grant_out_up = 1'b0;
+    grant_out_down = 1'b0;
+    grant_out_right  = 1'b0;
+    grant_out_left  = 1'b0;
 
     // Only grant when destination buffer has space
     if (target_buf_empty) begin
         case (current_priority)
             PRIO_PE: begin
                 if (req_in_pe) grant_out_pe = 1'b1;
-                else if (req_in_north) grant_out_north = 1'b1;
-                else if (req_in_south) grant_out_south = 1'b1;
-                else if (req_in_east) grant_out_east = 1'b1;
-                else if (req_in_west) grant_out_west = 1'b1;
+                else if (req_in_up) grant_out_up = 1'b1;
+                else if (req_in_down) grant_out_down = 1'b1;
+                else if (req_in_right) grant_out_right = 1'b1;
+                else if (req_in_left) grant_out_left = 1'b1;
             end
 
-            PRIO_NORTH: begin
-                if (req_in_north) grant_out_north = 1'b1;
-                else if (req_in_south) grant_out_south = 1'b1;
-                else if (req_in_east) grant_out_east = 1'b1;
-                else if (req_in_west) grant_out_west = 1'b1;
+            PRIO_UP: begin
+                if (req_in_up) grant_out_up = 1'b1;
+                else if (req_in_down) grant_out_down = 1'b1;
+                else if (req_in_right) grant_out_right = 1'b1;
+                else if (req_in_left) grant_out_left = 1'b1;
                 else if (req_in_pe) grant_out_pe = 1'b1;
             end
 
-            PRIO_SOUTH: begin
-                if (req_in_south) grant_out_south = 1'b1;
-                else if (req_in_east) grant_out_east = 1'b1;
-                else if (req_in_west) grant_out_west = 1'b1;
+            PRIO_DOWN: begin
+                if (req_in_down) grant_out_down = 1'b1;
+                else if (req_in_right) grant_out_right = 1'b1;
+                else if (req_in_left) grant_out_left = 1'b1;
                 else if (req_in_pe) grant_out_pe = 1'b1;
-                else if (req_in_north) grant_out_north = 1'b1;
+                else if (req_in_up) grant_out_up = 1'b1;
             end
 
-            PRIO_EAST: begin
-                if (req_in_east) grant_out_east = 1'b1;
-                else if (req_in_west) grant_out_west = 1'b1;
+            PRIO_RIGHT: begin
+                if (req_in_right) grant_out_right = 1'b1;
+                else if (req_in_left) grant_out_left = 1'b1;
                 else if (req_in_pe) grant_out_pe = 1'b1;
-                else if (req_in_north) grant_out_north = 1'b1;
-                else if (req_in_south) grant_out_south = 1'b1;
+                else if (req_in_up) grant_out_up = 1'b1;
+                else if (req_in_down) grant_out_down = 1'b1;
             end
 
-            PRIO_WEST: begin
-                if (req_in_west) grant_out_west = 1'b1;
+            PRIO_LEFT: begin
+                if (req_in_left) grant_out_left = 1'b1;
                 else if (req_in_pe) grant_out_pe = 1'b1;
-                else if (req_in_north) grant_out_north = 1'b1;
-                else if (req_in_south) grant_out_south = 1'b1;
-                else if (req_in_east) grant_out_east = 1'b1;
+                else if (req_in_up) grant_out_up = 1'b1;
+                else if (req_in_down) grant_out_down = 1'b1;
+                else if (req_in_right) grant_out_right = 1'b1;
             end
 
             default: begin
                 if (req_in_pe) grant_out_pe = 1'b1;
-                else if (req_in_north) grant_out_north = 1'b1;
-                else if (req_in_south) grant_out_south = 1'b1;
-                else if (req_in_east) grant_out_east = 1'b1;
-                else if (req_in_west) grant_out_west = 1'b1;
+                else if (req_in_up) grant_out_up = 1'b1;
+                else if (req_in_down) grant_out_down = 1'b1;
+                else if (req_in_right) grant_out_right = 1'b1;
+                else if (req_in_left) grant_out_left = 1'b1;
             end
         endcase
     end
 end
 
 // Rotating Priority State Tracking
-wire [2:0] total_requests = {2'b00, req_in_pe} + {2'b00, req_in_north} + {2'b00, req_in_south} + {2'b00, req_in_east} + {2'b00, req_in_west};
+wire [2:0] total_requests = {2'b00, req_in_pe} + {2'b00, req_in_up} + {2'b00, req_in_down} + {2'b00, req_in_right} + {2'b00, req_in_left};
 wire contention = (total_requests > 3'd1);
 
 reg [2:0] next_prio_on_conflict;
 always @(*) begin
-    if (grant_out_pe) next_prio_on_conflict = PRIO_NORTH;
-    else if (grant_out_north) next_prio_on_conflict = PRIO_SOUTH;
-    else if (grant_out_south) next_prio_on_conflict = PRIO_EAST;
-    else if (grant_out_east) next_prio_on_conflict = PRIO_WEST;
+    if (grant_out_pe) next_prio_on_conflict = PRIO_UP;
+    else if (grant_out_up) next_prio_on_conflict = PRIO_DOWN;
+    else if (grant_out_down) next_prio_on_conflict = PRIO_RIGHT;
+    else if (grant_out_right) next_prio_on_conflict = PRIO_LEFT;
     else next_prio_on_conflict = PRIO_PE;
 end
 
-wire grant_active = grant_out_pe | grant_out_north | grant_out_south | grant_out_east | grant_out_west;
+wire grant_active = grant_out_pe | grant_out_up | grant_out_down | grant_out_right | grant_out_left;
 
 always @(posedge clk) begin
     if (reset) begin
@@ -156,10 +156,10 @@ end
 
 // Packet Multiplexer: payload and header pass through unmodified
 wire [63:0] packet_to_write = grant_out_pe ? data_in_pe : 
-                              grant_out_north ? data_in_north :
-                              grant_out_south ? data_in_south :
-                              grant_out_east ? data_in_east :
-                              grant_out_west ? data_in_west : 64'h0;
+                              grant_out_up ? data_in_up :
+                              grant_out_down ? data_in_down :
+                              grant_out_right ? data_in_right :
+                              grant_out_left ? data_in_left : 64'h0;
 
 // Buffer Write Logic
 // Even Output Buffer (VC0)

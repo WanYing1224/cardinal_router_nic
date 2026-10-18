@@ -28,10 +28,10 @@ module router_input_ctrl #(
     // Internal channel interface
     input wire grant_in,
     output wire [63:0] selected_data_out,
-    output reg request_north,   // req_north
-    output reg request_south,   // req_south
-    output reg request_east,    // req_east
-    output reg request_west,    // req_west
+    output reg request_up,   // req_north
+    output reg request_down,   // req_south
+    output reg request_right,    // req_east
+    output reg request_left,    // req_west
     output reg request_pe       // req_pe
 );
 
@@ -93,26 +93,26 @@ wire [1:0] dest_x = selected_data_out[61:60];
 wire [1:0] dest_y = selected_data_out[59:58];
 
 always @(*) begin
-    request_north = 1'b0;
-    request_south = 1'b0;
-    request_east = 1'b0;
-    request_west = 1'b0;
+    request_up = 1'b0;
+    request_down = 1'b0;
+    request_right = 1'b0;
+    request_left = 1'b0;
     request_pe = 1'b0;
 
     if (active_buf_full) begin
         // Route in X dimension first
         if (dest_x > MY_X) begin
-            request_east = 1'b1;
+            request_right = 1'b1;
         end
         else if (dest_x < MY_X) begin
-            request_west = 1'b1;
+            request_left = 1'b1;
         end
         // When X matches, route in Y dimension
         else if (dest_y > MY_Y) begin
-            request_south = 1'b1;
+            request_down = 1'b1;
         end
         else if (dest_y < MY_Y) begin
-            request_north = 1'b1;
+            request_up = 1'b1;
         end
         // Destination node reached
         else begin
