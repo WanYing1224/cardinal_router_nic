@@ -1,0 +1,44 @@
+==================================================================
+       EE577B Phase 1: 4x4 Gold Mesh System Verification          
+==================================================================
+
+--- Test 1: Reset & Polarity Synchronization ---
+[PASS] All 16 node polarities held at 0 during reset.
+[PASS] All 16 node polarities toggle synchronously.
+
+--- Test 2: Horizontal 1-Hop Traversal (0 -> 1) ---
+[Time 40000 ns] [INJECT] Node 0 injected packet 10010000aaaa0001 (VC=0, Dest=(1,0))
+[Time 54000 ns] [PASS] Node 1 received correct packet: 10010000aaaa0001
+
+--- Test 3: Vertical 1-Hop Traversal (0 -> 4) ---
+[Time 60000 ns] [INJECT] Node 0 injected packet 84010000aaaa0004 (VC=1, Dest=(0,1))
+[Time 74000 ns] [PASS] Node 4 received correct packet: 84010000aaaa0004
+
+--- Test 4: Corner-to-Corner Traversal (Node 0 -> Node 15) ---
+[Time 80000 ns] [INJECT] Node 0 injected packet 3c060000deadbeef (VC=0, Dest=(3,3))
+[Time 134000 ns] [PASS] Node 15 received correct packet: 3c060000deadbeef
+
+--- Test 5: Reverse Traversal (Node 15 -> Node 0) ---
+[Time 140000 ns] [INJECT] Node 15 injected packet 8006000fcafebabe (VC=1, Dest=(0,0))
+[Time 194000 ns] [PASS] Node 0 received correct packet: 8006000fcafebabe
+
+--- Test 6: Concurrent Traffic Across Multiple Nodes ---
+[Time 200000 ns] [INJECT] Node 12 injected packet 1c01000ccccc1313 (VC=0, Dest=(1,3))
+[Time 200000 ns] [INJECT] Node 12 injected packet 1c01000ccccc1313 (VC=0, Dest=(1,3))
+[Time 200000 ns] [INJECT] Node 12 injected packet 1c01000ccccc1313 (VC=0, Dest=(1,3))
+[Time 214000 ns] [PASS] Node 13 received correct packet: 1c01000ccccc1313
+[Time 214000 ns] [PASS] Node 13 received correct packet: 1c01000ccccc1313
+[Time 214000 ns] [PASS] Node 13 received correct packet: 1c01000ccccc1313
+
+--- Test 7: Downstream Backpressure Handling ---
+[Time 220000 ns] [INJECT] Node 0 injected packet 9402000099990505 (VC=1, Dest=(1,1))
+[Time 258000 ns] [PASS] Node 5 received correct packet: 9402000099990505
+
+==================================================================
+                    VERIFICATION SUMMARY                         
+==================================================================
+Total Packets Injected : 8
+Total Packets Received : 8
+Total Errors Encountered: 0
+OVERALL STATUS: >>> ALL TESTS PASSED SUCCESSFULLY <<<
+==================================================================
