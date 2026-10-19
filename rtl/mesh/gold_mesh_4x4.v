@@ -127,7 +127,7 @@ module gold_mesh_4x4 (
 	output node14_peso, node14_peri,
 	input  [63:0] node14_pedi,
 	output [63:0] node14_pedo,
-	output node14_polarity
+	output node14_polarity,
 
 	// Node 15 (3,3) Interface
 	input node15_pesi, node15_pero,
