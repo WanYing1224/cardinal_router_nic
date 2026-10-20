@@ -1,0 +1,27 @@
+=================================================================
+   EE577B Cardinal NIC Testbench Simulation Starting            
+=================================================================
+[PASS] Reset net_ri active
+[PASS] Reset net_so inactive
+[PASS] Reset d_out is zero
+[PASS] Post-reset net_ri ready
+[PASS] Output status initially empty
+[PASS] tput status occupied after store
+[PASS] net_do drives stored packet
+[PASS] Corrupt store ignored
+[PASS] net_so blocked when net_ro=0
+[PASS] Output buffer cleared after send
+[PASS]  status empty after transmission
+[PASS] tput status empty after VC1 send
+[PASS] Input status initially empty
+[PASS] deasserts when input buffer full
+[PASS] Input status indicates full
+[PASS] CPU reads correct packet data
+[PASS] Input buffer cleared after read
+[PASS] net_ri reasserts ready
+[PASS] Load status when empty returns 0
+[PASS] d_out is 0 when nicEn=0
+=================================================================
+   TEST SUMMARY: Total Tests: 20 | Errors: 0
+   VERDICT: ALL TESTS PASSED!
+=================================================================
