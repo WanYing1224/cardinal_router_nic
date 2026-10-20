@@ -16,7 +16,7 @@ polarity – even/odd clk cycle
 
 ==============================================================================================*/
 
-module cardinal_nic (clk, reset, addr, d_in, d_out, nicEn, nicEnWr, net_si, net_ri, net_di, net_so, net_ro, net_do, net_polariity);
+module cardinal_nic (clk, reset, addr, d_in, d_out, nicEn, nicEnWr, net_si, net_ri, net_di, net_so, net_ro, net_do, net_polarity);
 
 input wire clk, reset;
 
