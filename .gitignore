@@ -32,6 +32,7 @@ waves.shm/
 *.trn
 *.dsn
 xcelium.d/
+.simvision/
 
 # Editor and OS junk
 .DS_Store
