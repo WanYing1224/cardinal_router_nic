@@ -4,8 +4,7 @@ File: tb/tb_router_node.v
 Target: router_node #(.MY_X(2'd1), .MY_Y(2'd1))
 
 Output: Writes formatted verification log directly to ../out/tb_router_node.out
-
-
+Waveform: Dumps SimVision database directly into simvision_router/
 =============================================================================*/
 
 `timescale 1ns/1ps
@@ -66,6 +65,14 @@ integer log_file;
 integer total_tests;
 integer pass_tests;
 integer fail_tests;
+
+// =========================================================================
+// Waveform Database Dump for SimVision (simvision_router)
+// =========================================================================
+initial begin
+    $shm_open("waveforms/simvision_router");
+    $shm_probe("AS");
+end
 
 // =========================================================================
 // Instantiate DUT: router_node at coordinate (1, 1)
@@ -130,13 +137,12 @@ always #2.0 clk = ~clk;
 // [47:32]: Source Node ID
 // [31:0] : Payload
 // =========================================================================
-function [63:0] make_packet(
-    input        vc,
-    input [1:0]  dest_x,
-    input [1:0]  dest_y,
-    input [15:0] src_id,
-    input [31:0] payload
-);
+function [63:0] make_packet;
+    input        vc;
+    input [1:0]  dest_x;
+    input [1:0]  dest_y;
+    input [15:0] src_id;
+    input [31:0] payload;
     begin
         make_packet = {vc, 1'b0, dest_x, dest_y, 2'b00, 8'h00, src_id, payload};
     end
@@ -296,10 +302,9 @@ reg [63:0] p1, p2, p3, p_pe, p_left;
 
 initial begin
     // Open Output Report File
-    log_file = $fopen("../out/tb_router_node.out", "w");
-    if (!log_file) begin
-        $display("[FATAL] Could not create file ../out/tb_router_node.out. Check folder permissions!");
-        $finish;
+    log_file = $fopen("out/tb_router_node.out", "w");
+    if (log_file == 0) begin
+        log_file = $fopen("tb_router_node.out", "w");
     end
 
     $fdisplay(log_file, "================================================================================");
@@ -441,8 +446,8 @@ initial begin
     end
     $fdisplay(log_file, "================================================================================");
 
-    $fclose(log_file);$finish;
+    $fclose(log_file);
+    $finish;
 end
-
 
 endmodule

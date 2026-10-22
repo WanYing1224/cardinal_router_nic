@@ -5,6 +5,7 @@
     - Clock: 250 MHz (4.0 ns period)
     - Full coverage of Phase I report test cases and automatic self-checking
     - Logs results to console and out/cardinal_nic.out
+    - Dumps SimVision waveform database to simvision_nic/
 =============================================================================*/
 
 `timescale 1ns/1ps
@@ -40,6 +41,14 @@ module tb_cardinal_nic;
     integer fout;
     integer test_count;
     integer error_count;
+
+    // =========================================================================
+    // Waveform Database Dump for SimVision (simvision_nic)
+    // =========================================================================
+    initial begin
+        $shm_open("waveforms/simvision_nic");
+        $shm_probe("AS");
+    end
 
     // =========================================================================
     // Device Under Test (DUT) Instantiation
