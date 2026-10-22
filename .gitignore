@@ -29,8 +29,6 @@ ncelab.*
 *.history
 *.key
 waves.shm/
-*.trn
-*.dsn
 xcelium.d/
 .simvision/
 
