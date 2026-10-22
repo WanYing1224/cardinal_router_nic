@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : router_node
+Version: Y-2026.03
+Date   : Wed Oct 21 20:21:38 2026
+****************************************
+
+Library(s) Used:
+
+    gscl45nm (File: /tools/PDK/NCSU45PDK/FreePDK45/osu_soc/lib/files/gscl45nm.db)
+
+Number of ports:                         3353
+Number of nets:                         13555
+Number of cells:                        10562
+Number of combinational cells:           9209
+Number of sequential cells:              1331
+Number of macros/black boxes:               0
+Number of buf/inv:                       3382
+Number of references:                      15
+
+Combinational area:              19735.941833
+Buf/Inv area:                     4837.544314
+Noncombinational area:           10618.850864
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 30354.792698
+Total area:                 undefined
+1

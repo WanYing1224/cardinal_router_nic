@@ -1,0 +1,119 @@
+Warning: Design 'gold_mesh_4x4' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Updating design information... (UID-85)
+Warning: Design 'gold_mesh_4x4' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : gold_mesh_4x4
+Version: Y-2026.03
+Date   : Wed Oct 21 22:00:47 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: ROW_0__COL_0__u_router_node/polarity_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ROW_0__COL_0__u_router_node/u_out_down/buf_odd_reg_0_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  ROW_0__COL_0__u_router_node/polarity_reg/CLK (DFFPOSX1)
+                                                          0.00 #     0.00 r
+  ROW_0__COL_0__u_router_node/polarity_reg/Q (DFFPOSX1)
+                                                          0.07       0.07 r
+  ROW_0__COL_0__u_router_node/U35/Y (INVX1)               0.02       0.09 f
+  ROW_0__COL_0__u_router_node/U34/Y (INVX1)               0.15       0.24 r
+  ROW_0__COL_0__u_router_node/u_in_left/polarity (router_input_ctrl_1)
+                                                          0.00       0.24 r
+  ROW_0__COL_0__u_router_node/u_in_left/U617/Y (INVX1)
+                                                          0.07       0.31 f
+  ROW_0__COL_0__u_router_node/u_in_left/U613/Y (INVX1)
+                                                          0.01       0.32 r
+  ROW_0__COL_0__u_router_node/u_in_left/U609/Y (INVX1)
+                                                          0.02       0.34 f
+  ROW_0__COL_0__u_router_node/u_in_left/U601/Y (INVX1)
+                                                          0.12       0.46 r
+  ROW_0__COL_0__u_router_node/u_in_left/U437/Y (AND2X1)
+                                                          0.03       0.49 r
+  ROW_0__COL_0__u_router_node/u_in_left/U439/Y (INVX1)
+                                                          0.02       0.51 f
+  ROW_0__COL_0__u_router_node/u_in_left/U271/Y (OAI21X1)
+                                                          0.05       0.56 r
+  ROW_0__COL_0__u_router_node/u_in_left/U552/Y (OR2X1)
+                                                          0.07       0.63 r
+  ROW_0__COL_0__u_router_node/u_in_left/U264/Y (NOR3X1)
+                                                          0.06       0.69 f
+  ROW_0__COL_0__u_router_node/u_in_left/request_down (router_input_ctrl_1)
+                                                          0.00       0.69 f
+  ROW_0__COL_0__u_router_node/u_out_down/req_in_left (router_output_ctrl_3)
+                                                          0.00       0.69 f
+  ROW_0__COL_0__u_router_node/u_out_down/U995/Y (INVX1)
+                                                          0.04       0.74 r
+  ROW_0__COL_0__u_router_node/u_out_down/U709/Y (NAND3X1)
+                                                          0.02       0.75 f
+  ROW_0__COL_0__u_router_node/u_out_down/U806/Y (BUFX2)
+                                                          0.04       0.79 f
+  ROW_0__COL_0__u_router_node/u_out_down/U998/Y (INVX1)
+                                                          0.00       0.79 r
+  ROW_0__COL_0__u_router_node/u_out_down/U708/Y (AOI22X1)
+                                                          0.03       0.82 f
+  ROW_0__COL_0__u_router_node/u_out_down/U953/Y (BUFX2)
+                                                          0.04       0.86 f
+  ROW_0__COL_0__u_router_node/u_out_down/U997/Y (INVX1)
+                                                          0.00       0.86 r
+  ROW_0__COL_0__u_router_node/u_out_down/U951/Y (OR2X1)
+                                                          0.04       0.90 r
+  ROW_0__COL_0__u_router_node/u_out_down/U952/Y (INVX1)
+                                                          0.02       0.92 f
+  ROW_0__COL_0__u_router_node/u_out_down/U706/Y (OAI21X1)
+                                                          0.02       0.94 r
+  ROW_0__COL_0__u_router_node/u_out_down/U705/Y (NAND3X1)
+                                                          0.02       0.96 f
+  ROW_0__COL_0__u_router_node/u_out_down/U996/Y (INVX1)
+                                                          0.62       1.58 r
+  ROW_0__COL_0__u_router_node/u_out_down/U698/Y (NOR3X1)
+                                                          0.24       1.82 f
+  ROW_0__COL_0__u_router_node/u_out_down/U814/Y (INVX1)
+                                                          0.11       1.93 r
+  ROW_0__COL_0__u_router_node/u_out_down/U6/Y (OR2X1)     0.04       1.97 r
+  ROW_0__COL_0__u_router_node/u_out_down/U3/Y (OR2X1)     0.07       2.04 r
+  ROW_0__COL_0__u_router_node/u_out_down/U294/Y (NAND3X1)
+                                                          0.02       2.06 f
+  ROW_0__COL_0__u_router_node/u_out_down/U812/Y (BUFX2)
+                                                          0.04       2.10 f
+  ROW_0__COL_0__u_router_node/u_out_down/U977/Y (INVX1)
+                                                          0.43       2.53 r
+  ROW_0__COL_0__u_router_node/u_out_down/U292/Y (NAND2X1)
+                                                          0.14       2.66 f
+  ROW_0__COL_0__u_router_node/u_out_down/U291/Y (OAI21X1)
+                                                          0.05       2.71 r
+  ROW_0__COL_0__u_router_node/u_out_down/buf_odd_reg_0_/D (DFFPOSX1)
+                                                          0.00       2.71 r
+  data arrival time                                                  2.71
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.10       3.90
+  ROW_0__COL_0__u_router_node/u_out_down/buf_odd_reg_0_/CLK (DFFPOSX1)
+                                                          0.00       3.90 r
+  library setup time                                     -1.11       2.79
+  data required time                                                 2.79
+  --------------------------------------------------------------------------
+  data required time                                                 2.79
+  data arrival time                                                 -2.71
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.08
+
+
+1

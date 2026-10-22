@@ -1,0 +1,1357 @@
+                          CONFORMAL (R)
+                   Version 25.20-p100 (12-Nov-2025) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2025. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 342 days old. You can download the latest version from http://downloads.cadence.com.
+
+CPU time     : 0.15    seconds
+Elapse time  : 0       seconds
+Memory usage : 134.50  M bytes
+// Command: read library -both -verilog include/gscl45nm.v
+// Parsing file include/gscl45nm.v ...
+// Warning: (RTL14) Signal has input but it has no output (occurrence:6)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:32)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:64)
+// Note: Read VERILOG library successfully
+// Command: read design rtl/nic/cardinal_nic.v -golden -verilog
+// Parsing file rtl/nic/cardinal_nic.v ...
+// Golden root module is set to 'cardinal_nic'
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:1)
+// Note: Read VERILOG design successfully
+// Command: read design netlist/cardinal_nic.syn.v -revised -verilog
+// Parsing file netlist/cardinal_nic.syn.v ...
+// Revised root module is set to 'cardinal_nic'
+// Note: Read VERILOG design successfully
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            137    130    194       461     
+--------------------------------------------------------------------------------
+Revised           137    130    194       461     
+================================================================================
+// Command: add compared points -all
+// 324 compared points added to compare list
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           130    194       324     
+================================================================================
+// Command: report compare data
+Compared points are: Equivalent (reachable)
+  (G) + 138  PO   /d_out[63]
+  (R) + 138  PO   /d_out[63]
+
+Compared points are: Equivalent (reachable)
+  (G) + 139  PO   /d_out[62]
+  (R) + 139  PO   /d_out[62]
+
+Compared points are: Equivalent (reachable)
+  (G) + 140  PO   /d_out[61]
+  (R) + 140  PO   /d_out[61]
+
+Compared points are: Equivalent (reachable)
+  (G) + 141  PO   /d_out[60]
+  (R) + 141  PO   /d_out[60]
+
+Compared points are: Equivalent (reachable)
+  (G) + 142  PO   /d_out[59]
+  (R) + 142  PO   /d_out[59]
+
+Compared points are: Equivalent (reachable)
+  (G) + 143  PO   /d_out[58]
+  (R) + 143  PO   /d_out[58]
+
+Compared points are: Equivalent (reachable)
+  (G) + 144  PO   /d_out[57]
+  (R) + 144  PO   /d_out[57]
+
+Compared points are: Equivalent (reachable)
+  (G) + 145  PO   /d_out[56]
+  (R) + 145  PO   /d_out[56]
+
+Compared points are: Equivalent (reachable)
+  (G) + 146  PO   /d_out[55]
+  (R) + 146  PO   /d_out[55]
+
+Compared points are: Equivalent (reachable)
+  (G) + 147  PO   /d_out[54]
+  (R) + 147  PO   /d_out[54]
+
+Compared points are: Equivalent (reachable)
+  (G) + 148  PO   /d_out[53]
+  (R) + 148  PO   /d_out[53]
+
+Compared points are: Equivalent (reachable)
+  (G) + 149  PO   /d_out[52]
+  (R) + 149  PO   /d_out[52]
+
+Compared points are: Equivalent (reachable)
+  (G) + 150  PO   /d_out[51]
+  (R) + 150  PO   /d_out[51]
+
+Compared points are: Equivalent (reachable)
+  (G) + 151  PO   /d_out[50]
+  (R) + 151  PO   /d_out[50]
+
+Compared points are: Equivalent (reachable)
+  (G) + 152  PO   /d_out[49]
+  (R) + 152  PO   /d_out[49]
+
+Compared points are: Equivalent (reachable)
+  (G) + 153  PO   /d_out[48]
+  (R) + 153  PO   /d_out[48]
+
+Compared points are: Equivalent (reachable)
+  (G) + 154  PO   /d_out[47]
+  (R) + 154  PO   /d_out[47]
+
+Compared points are: Equivalent (reachable)
+  (G) + 155  PO   /d_out[46]
+  (R) + 155  PO   /d_out[46]
+
+Compared points are: Equivalent (reachable)
+  (G) + 156  PO   /d_out[45]
+  (R) + 156  PO   /d_out[45]
+
+Compared points are: Equivalent (reachable)
+  (G) + 157  PO   /d_out[44]
+  (R) + 157  PO   /d_out[44]
+
+Compared points are: Equivalent (reachable)
+  (G) + 158  PO   /d_out[43]
+  (R) + 158  PO   /d_out[43]
+
+Compared points are: Equivalent (reachable)
+  (G) + 159  PO   /d_out[42]
+  (R) + 159  PO   /d_out[42]
+
+Compared points are: Equivalent (reachable)
+  (G) + 160  PO   /d_out[41]
+  (R) + 160  PO   /d_out[41]
+
+Compared points are: Equivalent (reachable)
+  (G) + 161  PO   /d_out[40]
+  (R) + 161  PO   /d_out[40]
+
+Compared points are: Equivalent (reachable)
+  (G) + 162  PO   /d_out[39]
+  (R) + 162  PO   /d_out[39]
+
+Compared points are: Equivalent (reachable)
+  (G) + 163  PO   /d_out[38]
+  (R) + 163  PO   /d_out[38]
+
+Compared points are: Equivalent (reachable)
+  (G) + 164  PO   /d_out[37]
+  (R) + 164  PO   /d_out[37]
+
+Compared points are: Equivalent (reachable)
+  (G) + 165  PO   /d_out[36]
+  (R) + 165  PO   /d_out[36]
+
+Compared points are: Equivalent (reachable)
+  (G) + 166  PO   /d_out[35]
+  (R) + 166  PO   /d_out[35]
+
+Compared points are: Equivalent (reachable)
+  (G) + 167  PO   /d_out[34]
+  (R) + 167  PO   /d_out[34]
+
+Compared points are: Equivalent (reachable)
+  (G) + 168  PO   /d_out[33]
+  (R) + 168  PO   /d_out[33]
+
+Compared points are: Equivalent (reachable)
+  (G) + 169  PO   /d_out[32]
+  (R) + 169  PO   /d_out[32]
+
+Compared points are: Equivalent (reachable)
+  (G) + 170  PO   /d_out[31]
+  (R) + 170  PO   /d_out[31]
+
+Compared points are: Equivalent (reachable)
+  (G) + 171  PO   /d_out[30]
+  (R) + 171  PO   /d_out[30]
+
+Compared points are: Equivalent (reachable)
+  (G) + 172  PO   /d_out[29]
+  (R) + 172  PO   /d_out[29]
+
+Compared points are: Equivalent (reachable)
+  (G) + 173  PO   /d_out[28]
+  (R) + 173  PO   /d_out[28]
+
+Compared points are: Equivalent (reachable)
+  (G) + 174  PO   /d_out[27]
+  (R) + 174  PO   /d_out[27]
+
+Compared points are: Equivalent (reachable)
+  (G) + 175  PO   /d_out[26]
+  (R) + 175  PO   /d_out[26]
+
+Compared points are: Equivalent (reachable)
+  (G) + 176  PO   /d_out[25]
+  (R) + 176  PO   /d_out[25]
+
+Compared points are: Equivalent (reachable)
+  (G) + 177  PO   /d_out[24]
+  (R) + 177  PO   /d_out[24]
+
+Compared points are: Equivalent (reachable)
+  (G) + 178  PO   /d_out[23]
+  (R) + 178  PO   /d_out[23]
+
+Compared points are: Equivalent (reachable)
+  (G) + 179  PO   /d_out[22]
+  (R) + 179  PO   /d_out[22]
+
+Compared points are: Equivalent (reachable)
+  (G) + 180  PO   /d_out[21]
+  (R) + 180  PO   /d_out[21]
+
+Compared points are: Equivalent (reachable)
+  (G) + 181  PO   /d_out[20]
+  (R) + 181  PO   /d_out[20]
+
+Compared points are: Equivalent (reachable)
+  (G) + 182  PO   /d_out[19]
+  (R) + 182  PO   /d_out[19]
+
+Compared points are: Equivalent (reachable)
+  (G) + 183  PO   /d_out[18]
+  (R) + 183  PO   /d_out[18]
+
+Compared points are: Equivalent (reachable)
+  (G) + 184  PO   /d_out[17]
+  (R) + 184  PO   /d_out[17]
+
+Compared points are: Equivalent (reachable)
+  (G) + 185  PO   /d_out[16]
+  (R) + 185  PO   /d_out[16]
+
+Compared points are: Equivalent (reachable)
+  (G) + 186  PO   /d_out[15]
+  (R) + 186  PO   /d_out[15]
+
+Compared points are: Equivalent (reachable)
+  (G) + 187  PO   /d_out[14]
+  (R) + 187  PO   /d_out[14]
+
+Compared points are: Equivalent (reachable)
+  (G) + 188  PO   /d_out[13]
+  (R) + 188  PO   /d_out[13]
+
+Compared points are: Equivalent (reachable)
+  (G) + 189  PO   /d_out[12]
+  (R) + 189  PO   /d_out[12]
+
+Compared points are: Equivalent (reachable)
+  (G) + 190  PO   /d_out[11]
+  (R) + 190  PO   /d_out[11]
+
+Compared points are: Equivalent (reachable)
+  (G) + 191  PO   /d_out[10]
+  (R) + 191  PO   /d_out[10]
+
+Compared points are: Equivalent (reachable)
+  (G) + 192  PO   /d_out[9]
+  (R) + 192  PO   /d_out[9]
+
+Compared points are: Equivalent (reachable)
+  (G) + 193  PO   /d_out[8]
+  (R) + 193  PO   /d_out[8]
+
+Compared points are: Equivalent (reachable)
+  (G) + 194  PO   /d_out[7]
+  (R) + 194  PO   /d_out[7]
+
+Compared points are: Equivalent (reachable)
+  (G) + 195  PO   /d_out[6]
+  (R) + 195  PO   /d_out[6]
+
+Compared points are: Equivalent (reachable)
+  (G) + 196  PO   /d_out[5]
+  (R) + 196  PO   /d_out[5]
+
+Compared points are: Equivalent (reachable)
+  (G) + 197  PO   /d_out[4]
+  (R) + 197  PO   /d_out[4]
+
+Compared points are: Equivalent (reachable)
+  (G) + 198  PO   /d_out[3]
+  (R) + 198  PO   /d_out[3]
+
+Compared points are: Equivalent (reachable)
+  (G) + 199  PO   /d_out[2]
+  (R) + 199  PO   /d_out[2]
+
+Compared points are: Equivalent (reachable)
+  (G) + 200  PO   /d_out[1]
+  (R) + 200  PO   /d_out[1]
+
+Compared points are: Equivalent (reachable)
+  (G) + 201  PO   /d_out[0]
+  (R) + 201  PO   /d_out[0]
+
+Compared points are: Equivalent (reachable)
+  (G) + 202  PO   /net_ri
+  (R) + 202  PO   /net_ri
+
+Compared points are: Equivalent (reachable)
+  (G) + 203  PO   /net_so
+  (R) + 203  PO   /net_so
+
+Compared points are: Equivalent (reachable)
+  (G) + 204  PO   /net_do[63]
+  (R) + 204  PO   /net_do[63]
+
+Compared points are: Equivalent (reachable)
+  (G) + 205  PO   /net_do[62]
+  (R) + 205  PO   /net_do[62]
+
+Compared points are: Equivalent (reachable)
+  (G) + 206  PO   /net_do[61]
+  (R) + 206  PO   /net_do[61]
+
+Compared points are: Equivalent (reachable)
+  (G) + 207  PO   /net_do[60]
+  (R) + 207  PO   /net_do[60]
+
+Compared points are: Equivalent (reachable)
+  (G) + 208  PO   /net_do[59]
+  (R) + 208  PO   /net_do[59]
+
+Compared points are: Equivalent (reachable)
+  (G) + 209  PO   /net_do[58]
+  (R) + 209  PO   /net_do[58]
+
+Compared points are: Equivalent (reachable)
+  (G) + 210  PO   /net_do[57]
+  (R) + 210  PO   /net_do[57]
+
+Compared points are: Equivalent (reachable)
+  (G) + 211  PO   /net_do[56]
+  (R) + 211  PO   /net_do[56]
+
+Compared points are: Equivalent (reachable)
+  (G) + 212  PO   /net_do[55]
+  (R) + 212  PO   /net_do[55]
+
+Compared points are: Equivalent (reachable)
+  (G) + 213  PO   /net_do[54]
+  (R) + 213  PO   /net_do[54]
+
+Compared points are: Equivalent (reachable)
+  (G) + 214  PO   /net_do[53]
+  (R) + 214  PO   /net_do[53]
+
+Compared points are: Equivalent (reachable)
+  (G) + 215  PO   /net_do[52]
+  (R) + 215  PO   /net_do[52]
+
+Compared points are: Equivalent (reachable)
+  (G) + 216  PO   /net_do[51]
+  (R) + 216  PO   /net_do[51]
+
+Compared points are: Equivalent (reachable)
+  (G) + 217  PO   /net_do[50]
+  (R) + 217  PO   /net_do[50]
+
+Compared points are: Equivalent (reachable)
+  (G) + 218  PO   /net_do[49]
+  (R) + 218  PO   /net_do[49]
+
+Compared points are: Equivalent (reachable)
+  (G) + 219  PO   /net_do[48]
+  (R) + 219  PO   /net_do[48]
+
+Compared points are: Equivalent (reachable)
+  (G) + 220  PO   /net_do[47]
+  (R) + 220  PO   /net_do[47]
+
+Compared points are: Equivalent (reachable)
+  (G) + 221  PO   /net_do[46]
+  (R) + 221  PO   /net_do[46]
+
+Compared points are: Equivalent (reachable)
+  (G) + 222  PO   /net_do[45]
+  (R) + 222  PO   /net_do[45]
+
+Compared points are: Equivalent (reachable)
+  (G) + 223  PO   /net_do[44]
+  (R) + 223  PO   /net_do[44]
+
+Compared points are: Equivalent (reachable)
+  (G) + 224  PO   /net_do[43]
+  (R) + 224  PO   /net_do[43]
+
+Compared points are: Equivalent (reachable)
+  (G) + 225  PO   /net_do[42]
+  (R) + 225  PO   /net_do[42]
+
+Compared points are: Equivalent (reachable)
+  (G) + 226  PO   /net_do[41]
+  (R) + 226  PO   /net_do[41]
+
+Compared points are: Equivalent (reachable)
+  (G) + 227  PO   /net_do[40]
+  (R) + 227  PO   /net_do[40]
+
+Compared points are: Equivalent (reachable)
+  (G) + 228  PO   /net_do[39]
+  (R) + 228  PO   /net_do[39]
+
+Compared points are: Equivalent (reachable)
+  (G) + 229  PO   /net_do[38]
+  (R) + 229  PO   /net_do[38]
+
+Compared points are: Equivalent (reachable)
+  (G) + 230  PO   /net_do[37]
+  (R) + 230  PO   /net_do[37]
+
+Compared points are: Equivalent (reachable)
+  (G) + 231  PO   /net_do[36]
+  (R) + 231  PO   /net_do[36]
+
+Compared points are: Equivalent (reachable)
+  (G) + 232  PO   /net_do[35]
+  (R) + 232  PO   /net_do[35]
+
+Compared points are: Equivalent (reachable)
+  (G) + 233  PO   /net_do[34]
+  (R) + 233  PO   /net_do[34]
+
+Compared points are: Equivalent (reachable)
+  (G) + 234  PO   /net_do[33]
+  (R) + 234  PO   /net_do[33]
+
+Compared points are: Equivalent (reachable)
+  (G) + 235  PO   /net_do[32]
+  (R) + 235  PO   /net_do[32]
+
+Compared points are: Equivalent (reachable)
+  (G) + 236  PO   /net_do[31]
+  (R) + 236  PO   /net_do[31]
+
+Compared points are: Equivalent (reachable)
+  (G) + 237  PO   /net_do[30]
+  (R) + 237  PO   /net_do[30]
+
+Compared points are: Equivalent (reachable)
+  (G) + 238  PO   /net_do[29]
+  (R) + 238  PO   /net_do[29]
+
+Compared points are: Equivalent (reachable)
+  (G) + 239  PO   /net_do[28]
+  (R) + 239  PO   /net_do[28]
+
+Compared points are: Equivalent (reachable)
+  (G) + 240  PO   /net_do[27]
+  (R) + 240  PO   /net_do[27]
+
+Compared points are: Equivalent (reachable)
+  (G) + 241  PO   /net_do[26]
+  (R) + 241  PO   /net_do[26]
+
+Compared points are: Equivalent (reachable)
+  (G) + 242  PO   /net_do[25]
+  (R) + 242  PO   /net_do[25]
+
+Compared points are: Equivalent (reachable)
+  (G) + 243  PO   /net_do[24]
+  (R) + 243  PO   /net_do[24]
+
+Compared points are: Equivalent (reachable)
+  (G) + 244  PO   /net_do[23]
+  (R) + 244  PO   /net_do[23]
+
+Compared points are: Equivalent (reachable)
+  (G) + 245  PO   /net_do[22]
+  (R) + 245  PO   /net_do[22]
+
+Compared points are: Equivalent (reachable)
+  (G) + 246  PO   /net_do[21]
+  (R) + 246  PO   /net_do[21]
+
+Compared points are: Equivalent (reachable)
+  (G) + 247  PO   /net_do[20]
+  (R) + 247  PO   /net_do[20]
+
+Compared points are: Equivalent (reachable)
+  (G) + 248  PO   /net_do[19]
+  (R) + 248  PO   /net_do[19]
+
+Compared points are: Equivalent (reachable)
+  (G) + 249  PO   /net_do[18]
+  (R) + 249  PO   /net_do[18]
+
+Compared points are: Equivalent (reachable)
+  (G) + 250  PO   /net_do[17]
+  (R) + 250  PO   /net_do[17]
+
+Compared points are: Equivalent (reachable)
+  (G) + 251  PO   /net_do[16]
+  (R) + 251  PO   /net_do[16]
+
+Compared points are: Equivalent (reachable)
+  (G) + 252  PO   /net_do[15]
+  (R) + 252  PO   /net_do[15]
+
+Compared points are: Equivalent (reachable)
+  (G) + 253  PO   /net_do[14]
+  (R) + 253  PO   /net_do[14]
+
+Compared points are: Equivalent (reachable)
+  (G) + 254  PO   /net_do[13]
+  (R) + 254  PO   /net_do[13]
+
+Compared points are: Equivalent (reachable)
+  (G) + 255  PO   /net_do[12]
+  (R) + 255  PO   /net_do[12]
+
+Compared points are: Equivalent (reachable)
+  (G) + 256  PO   /net_do[11]
+  (R) + 256  PO   /net_do[11]
+
+Compared points are: Equivalent (reachable)
+  (G) + 257  PO   /net_do[10]
+  (R) + 257  PO   /net_do[10]
+
+Compared points are: Equivalent (reachable)
+  (G) + 258  PO   /net_do[9]
+  (R) + 258  PO   /net_do[9]
+
+Compared points are: Equivalent (reachable)
+  (G) + 259  PO   /net_do[8]
+  (R) + 259  PO   /net_do[8]
+
+Compared points are: Equivalent (reachable)
+  (G) + 260  PO   /net_do[7]
+  (R) + 260  PO   /net_do[7]
+
+Compared points are: Equivalent (reachable)
+  (G) + 261  PO   /net_do[6]
+  (R) + 261  PO   /net_do[6]
+
+Compared points are: Equivalent (reachable)
+  (G) + 262  PO   /net_do[5]
+  (R) + 262  PO   /net_do[5]
+
+Compared points are: Equivalent (reachable)
+  (G) + 263  PO   /net_do[4]
+  (R) + 263  PO   /net_do[4]
+
+Compared points are: Equivalent (reachable)
+  (G) + 264  PO   /net_do[3]
+  (R) + 264  PO   /net_do[3]
+
+Compared points are: Equivalent (reachable)
+  (G) + 265  PO   /net_do[2]
+  (R) + 265  PO   /net_do[2]
+
+Compared points are: Equivalent (reachable)
+  (G) + 266  PO   /net_do[1]
+  (R) + 266  PO   /net_do[1]
+
+Compared points are: Equivalent (reachable)
+  (G) + 267  PO   /net_do[0]
+  (R) + 267  PO   /net_do[0]
+
+Compared points are: Equivalent (reachable)
+  (G) + 268  DFF  /out_buf_full_reg
+  (R) + 268  DFF  /out_buf_full_reg/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 269  DFF  /in_buf_full_reg
+  (R) + 333  DFF  /in_buf_full_reg/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 270  DFF  /out_buf_reg[63]
+  (R) + 331  DFF  /out_buf_reg_63_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 271  DFF  /out_buf_reg[62]
+  (R) + 330  DFF  /out_buf_reg_62_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 272  DFF  /out_buf_reg[61]
+  (R) + 329  DFF  /out_buf_reg_61_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 273  DFF  /out_buf_reg[60]
+  (R) + 328  DFF  /out_buf_reg_60_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 274  DFF  /out_buf_reg[59]
+  (R) + 327  DFF  /out_buf_reg_59_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 275  DFF  /out_buf_reg[58]
+  (R) + 326  DFF  /out_buf_reg_58_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 276  DFF  /out_buf_reg[57]
+  (R) + 325  DFF  /out_buf_reg_57_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 277  DFF  /out_buf_reg[56]
+  (R) + 324  DFF  /out_buf_reg_56_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 278  DFF  /out_buf_reg[55]
+  (R) + 323  DFF  /out_buf_reg_55_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 279  DFF  /out_buf_reg[54]
+  (R) + 322  DFF  /out_buf_reg_54_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 280  DFF  /out_buf_reg[53]
+  (R) + 321  DFF  /out_buf_reg_53_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 281  DFF  /out_buf_reg[52]
+  (R) + 320  DFF  /out_buf_reg_52_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 282  DFF  /out_buf_reg[51]
+  (R) + 319  DFF  /out_buf_reg_51_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 283  DFF  /out_buf_reg[50]
+  (R) + 318  DFF  /out_buf_reg_50_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 284  DFF  /out_buf_reg[49]
+  (R) + 317  DFF  /out_buf_reg_49_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 285  DFF  /out_buf_reg[48]
+  (R) + 316  DFF  /out_buf_reg_48_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 286  DFF  /out_buf_reg[47]
+  (R) + 315  DFF  /out_buf_reg_47_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 287  DFF  /out_buf_reg[46]
+  (R) + 314  DFF  /out_buf_reg_46_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 288  DFF  /out_buf_reg[45]
+  (R) + 313  DFF  /out_buf_reg_45_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 289  DFF  /out_buf_reg[44]
+  (R) + 312  DFF  /out_buf_reg_44_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 290  DFF  /out_buf_reg[43]
+  (R) + 311  DFF  /out_buf_reg_43_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 291  DFF  /out_buf_reg[42]
+  (R) + 310  DFF  /out_buf_reg_42_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 292  DFF  /out_buf_reg[41]
+  (R) + 309  DFF  /out_buf_reg_41_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 293  DFF  /out_buf_reg[40]
+  (R) + 308  DFF  /out_buf_reg_40_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 294  DFF  /out_buf_reg[39]
+  (R) + 307  DFF  /out_buf_reg_39_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 295  DFF  /out_buf_reg[38]
+  (R) + 306  DFF  /out_buf_reg_38_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 296  DFF  /out_buf_reg[37]
+  (R) + 305  DFF  /out_buf_reg_37_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 297  DFF  /out_buf_reg[36]
+  (R) + 304  DFF  /out_buf_reg_36_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 298  DFF  /out_buf_reg[35]
+  (R) + 303  DFF  /out_buf_reg_35_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 299  DFF  /out_buf_reg[34]
+  (R) + 302  DFF  /out_buf_reg_34_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 300  DFF  /out_buf_reg[33]
+  (R) + 301  DFF  /out_buf_reg_33_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 301  DFF  /out_buf_reg[32]
+  (R) + 300  DFF  /out_buf_reg_32_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 302  DFF  /out_buf_reg[31]
+  (R) + 299  DFF  /out_buf_reg_31_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 303  DFF  /out_buf_reg[30]
+  (R) + 298  DFF  /out_buf_reg_30_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 304  DFF  /out_buf_reg[29]
+  (R) + 297  DFF  /out_buf_reg_29_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 305  DFF  /out_buf_reg[28]
+  (R) + 296  DFF  /out_buf_reg_28_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 306  DFF  /out_buf_reg[27]
+  (R) + 295  DFF  /out_buf_reg_27_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 307  DFF  /out_buf_reg[26]
+  (R) + 294  DFF  /out_buf_reg_26_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 308  DFF  /out_buf_reg[25]
+  (R) + 293  DFF  /out_buf_reg_25_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 309  DFF  /out_buf_reg[24]
+  (R) + 292  DFF  /out_buf_reg_24_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 310  DFF  /out_buf_reg[23]
+  (R) + 291  DFF  /out_buf_reg_23_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 311  DFF  /out_buf_reg[22]
+  (R) + 290  DFF  /out_buf_reg_22_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 312  DFF  /out_buf_reg[21]
+  (R) + 289  DFF  /out_buf_reg_21_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 313  DFF  /out_buf_reg[20]
+  (R) + 288  DFF  /out_buf_reg_20_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 314  DFF  /out_buf_reg[19]
+  (R) + 287  DFF  /out_buf_reg_19_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 315  DFF  /out_buf_reg[18]
+  (R) + 286  DFF  /out_buf_reg_18_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 316  DFF  /out_buf_reg[17]
+  (R) + 285  DFF  /out_buf_reg_17_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 317  DFF  /out_buf_reg[16]
+  (R) + 284  DFF  /out_buf_reg_16_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 318  DFF  /out_buf_reg[15]
+  (R) + 283  DFF  /out_buf_reg_15_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 319  DFF  /out_buf_reg[14]
+  (R) + 282  DFF  /out_buf_reg_14_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 320  DFF  /out_buf_reg[13]
+  (R) + 281  DFF  /out_buf_reg_13_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 321  DFF  /out_buf_reg[12]
+  (R) + 280  DFF  /out_buf_reg_12_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 322  DFF  /out_buf_reg[11]
+  (R) + 279  DFF  /out_buf_reg_11_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 323  DFF  /out_buf_reg[10]
+  (R) + 278  DFF  /out_buf_reg_10_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 324  DFF  /out_buf_reg[9]
+  (R) + 277  DFF  /out_buf_reg_9_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 325  DFF  /out_buf_reg[8]
+  (R) + 276  DFF  /out_buf_reg_8_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 326  DFF  /out_buf_reg[7]
+  (R) + 275  DFF  /out_buf_reg_7_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 327  DFF  /out_buf_reg[6]
+  (R) + 274  DFF  /out_buf_reg_6_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 328  DFF  /out_buf_reg[5]
+  (R) + 273  DFF  /out_buf_reg_5_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 329  DFF  /out_buf_reg[4]
+  (R) + 272  DFF  /out_buf_reg_4_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 330  DFF  /out_buf_reg[3]
+  (R) + 271  DFF  /out_buf_reg_3_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 331  DFF  /out_buf_reg[2]
+  (R) + 270  DFF  /out_buf_reg_2_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 332  DFF  /out_buf_reg[1]
+  (R) + 269  DFF  /out_buf_reg_1_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 333  DFF  /out_buf_reg[0]
+  (R) + 332  DFF  /out_buf_reg_0_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 334  DFF  /in_buf_reg[63]
+  (R) + 334  DFF  /in_buf_reg_63_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 335  DFF  /in_buf_reg[62]
+  (R) + 336  DFF  /in_buf_reg_62_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 336  DFF  /in_buf_reg[61]
+  (R) + 338  DFF  /in_buf_reg_61_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 337  DFF  /in_buf_reg[60]
+  (R) + 340  DFF  /in_buf_reg_60_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 338  DFF  /in_buf_reg[59]
+  (R) + 342  DFF  /in_buf_reg_59_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 339  DFF  /in_buf_reg[58]
+  (R) + 344  DFF  /in_buf_reg_58_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 340  DFF  /in_buf_reg[57]
+  (R) + 346  DFF  /in_buf_reg_57_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 341  DFF  /in_buf_reg[56]
+  (R) + 348  DFF  /in_buf_reg_56_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 342  DFF  /in_buf_reg[55]
+  (R) + 350  DFF  /in_buf_reg_55_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 343  DFF  /in_buf_reg[54]
+  (R) + 352  DFF  /in_buf_reg_54_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 344  DFF  /in_buf_reg[53]
+  (R) + 354  DFF  /in_buf_reg_53_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 345  DFF  /in_buf_reg[52]
+  (R) + 356  DFF  /in_buf_reg_52_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 346  DFF  /in_buf_reg[51]
+  (R) + 358  DFF  /in_buf_reg_51_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 347  DFF  /in_buf_reg[50]
+  (R) + 360  DFF  /in_buf_reg_50_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 348  DFF  /in_buf_reg[49]
+  (R) + 362  DFF  /in_buf_reg_49_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 349  DFF  /in_buf_reg[48]
+  (R) + 364  DFF  /in_buf_reg_48_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 350  DFF  /in_buf_reg[47]
+  (R) + 366  DFF  /in_buf_reg_47_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 351  DFF  /in_buf_reg[46]
+  (R) + 368  DFF  /in_buf_reg_46_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 352  DFF  /in_buf_reg[45]
+  (R) + 370  DFF  /in_buf_reg_45_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 353  DFF  /in_buf_reg[44]
+  (R) + 372  DFF  /in_buf_reg_44_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 354  DFF  /in_buf_reg[43]
+  (R) + 374  DFF  /in_buf_reg_43_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 355  DFF  /in_buf_reg[42]
+  (R) + 376  DFF  /in_buf_reg_42_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 356  DFF  /in_buf_reg[41]
+  (R) + 378  DFF  /in_buf_reg_41_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 357  DFF  /in_buf_reg[40]
+  (R) + 380  DFF  /in_buf_reg_40_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 358  DFF  /in_buf_reg[39]
+  (R) + 382  DFF  /in_buf_reg_39_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 359  DFF  /in_buf_reg[38]
+  (R) + 384  DFF  /in_buf_reg_38_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 360  DFF  /in_buf_reg[37]
+  (R) + 386  DFF  /in_buf_reg_37_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 361  DFF  /in_buf_reg[36]
+  (R) + 388  DFF  /in_buf_reg_36_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 362  DFF  /in_buf_reg[35]
+  (R) + 390  DFF  /in_buf_reg_35_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 363  DFF  /in_buf_reg[34]
+  (R) + 392  DFF  /in_buf_reg_34_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 364  DFF  /in_buf_reg[33]
+  (R) + 394  DFF  /in_buf_reg_33_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 365  DFF  /in_buf_reg[32]
+  (R) + 396  DFF  /in_buf_reg_32_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 366  DFF  /in_buf_reg[31]
+  (R) + 398  DFF  /in_buf_reg_31_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 367  DFF  /in_buf_reg[30]
+  (R) + 400  DFF  /in_buf_reg_30_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 368  DFF  /in_buf_reg[29]
+  (R) + 402  DFF  /in_buf_reg_29_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 369  DFF  /in_buf_reg[28]
+  (R) + 404  DFF  /in_buf_reg_28_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 370  DFF  /in_buf_reg[27]
+  (R) + 406  DFF  /in_buf_reg_27_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 371  DFF  /in_buf_reg[26]
+  (R) + 408  DFF  /in_buf_reg_26_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 372  DFF  /in_buf_reg[25]
+  (R) + 410  DFF  /in_buf_reg_25_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 373  DFF  /in_buf_reg[24]
+  (R) + 412  DFF  /in_buf_reg_24_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 374  DFF  /in_buf_reg[23]
+  (R) + 414  DFF  /in_buf_reg_23_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 375  DFF  /in_buf_reg[22]
+  (R) + 416  DFF  /in_buf_reg_22_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 376  DFF  /in_buf_reg[21]
+  (R) + 418  DFF  /in_buf_reg_21_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 377  DFF  /in_buf_reg[20]
+  (R) + 420  DFF  /in_buf_reg_20_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 378  DFF  /in_buf_reg[19]
+  (R) + 422  DFF  /in_buf_reg_19_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 379  DFF  /in_buf_reg[18]
+  (R) + 424  DFF  /in_buf_reg_18_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 380  DFF  /in_buf_reg[17]
+  (R) + 426  DFF  /in_buf_reg_17_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 381  DFF  /in_buf_reg[16]
+  (R) + 428  DFF  /in_buf_reg_16_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 382  DFF  /in_buf_reg[15]
+  (R) + 430  DFF  /in_buf_reg_15_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 383  DFF  /in_buf_reg[14]
+  (R) + 432  DFF  /in_buf_reg_14_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 384  DFF  /in_buf_reg[13]
+  (R) + 434  DFF  /in_buf_reg_13_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 385  DFF  /in_buf_reg[12]
+  (R) + 436  DFF  /in_buf_reg_12_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 386  DFF  /in_buf_reg[11]
+  (R) + 438  DFF  /in_buf_reg_11_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 387  DFF  /in_buf_reg[10]
+  (R) + 440  DFF  /in_buf_reg_10_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 388  DFF  /in_buf_reg[9]
+  (R) + 442  DFF  /in_buf_reg_9_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 389  DFF  /in_buf_reg[8]
+  (R) + 444  DFF  /in_buf_reg_8_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 390  DFF  /in_buf_reg[7]
+  (R) + 446  DFF  /in_buf_reg_7_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 391  DFF  /in_buf_reg[6]
+  (R) + 448  DFF  /in_buf_reg_6_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 392  DFF  /in_buf_reg[5]
+  (R) + 450  DFF  /in_buf_reg_5_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 393  DFF  /in_buf_reg[4]
+  (R) + 452  DFF  /in_buf_reg_4_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 394  DFF  /in_buf_reg[3]
+  (R) + 454  DFF  /in_buf_reg_3_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 395  DFF  /in_buf_reg[2]
+  (R) + 456  DFF  /in_buf_reg_2_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 396  DFF  /in_buf_reg[1]
+  (R) + 458  DFF  /in_buf_reg_1_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 397  DFF  /in_buf_reg[0]
+  (R) + 460  DFF  /in_buf_reg_0_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 398  DFF  /d_out_reg[63]
+  (R) + 335  DFF  /d_out_reg_63_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 399  DFF  /d_out_reg[62]
+  (R) + 337  DFF  /d_out_reg_62_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 400  DFF  /d_out_reg[61]
+  (R) + 339  DFF  /d_out_reg_61_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 401  DFF  /d_out_reg[60]
+  (R) + 341  DFF  /d_out_reg_60_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 402  DFF  /d_out_reg[59]
+  (R) + 343  DFF  /d_out_reg_59_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 403  DFF  /d_out_reg[58]
+  (R) + 345  DFF  /d_out_reg_58_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 404  DFF  /d_out_reg[57]
+  (R) + 347  DFF  /d_out_reg_57_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 405  DFF  /d_out_reg[56]
+  (R) + 349  DFF  /d_out_reg_56_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 406  DFF  /d_out_reg[55]
+  (R) + 351  DFF  /d_out_reg_55_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 407  DFF  /d_out_reg[54]
+  (R) + 353  DFF  /d_out_reg_54_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 408  DFF  /d_out_reg[53]
+  (R) + 355  DFF  /d_out_reg_53_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 409  DFF  /d_out_reg[52]
+  (R) + 357  DFF  /d_out_reg_52_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 410  DFF  /d_out_reg[51]
+  (R) + 359  DFF  /d_out_reg_51_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 411  DFF  /d_out_reg[50]
+  (R) + 361  DFF  /d_out_reg_50_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 412  DFF  /d_out_reg[49]
+  (R) + 363  DFF  /d_out_reg_49_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 413  DFF  /d_out_reg[48]
+  (R) + 365  DFF  /d_out_reg_48_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 414  DFF  /d_out_reg[47]
+  (R) + 367  DFF  /d_out_reg_47_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 415  DFF  /d_out_reg[46]
+  (R) + 369  DFF  /d_out_reg_46_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 416  DFF  /d_out_reg[45]
+  (R) + 371  DFF  /d_out_reg_45_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 417  DFF  /d_out_reg[44]
+  (R) + 373  DFF  /d_out_reg_44_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 418  DFF  /d_out_reg[43]
+  (R) + 375  DFF  /d_out_reg_43_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 419  DFF  /d_out_reg[42]
+  (R) + 377  DFF  /d_out_reg_42_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 420  DFF  /d_out_reg[41]
+  (R) + 379  DFF  /d_out_reg_41_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 421  DFF  /d_out_reg[40]
+  (R) + 381  DFF  /d_out_reg_40_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 422  DFF  /d_out_reg[39]
+  (R) + 383  DFF  /d_out_reg_39_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 423  DFF  /d_out_reg[38]
+  (R) + 385  DFF  /d_out_reg_38_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 424  DFF  /d_out_reg[37]
+  (R) + 387  DFF  /d_out_reg_37_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 425  DFF  /d_out_reg[36]
+  (R) + 389  DFF  /d_out_reg_36_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 426  DFF  /d_out_reg[35]
+  (R) + 391  DFF  /d_out_reg_35_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 427  DFF  /d_out_reg[34]
+  (R) + 393  DFF  /d_out_reg_34_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 428  DFF  /d_out_reg[33]
+  (R) + 395  DFF  /d_out_reg_33_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 429  DFF  /d_out_reg[32]
+  (R) + 397  DFF  /d_out_reg_32_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 430  DFF  /d_out_reg[31]
+  (R) + 399  DFF  /d_out_reg_31_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 431  DFF  /d_out_reg[30]
+  (R) + 401  DFF  /d_out_reg_30_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 432  DFF  /d_out_reg[29]
+  (R) + 403  DFF  /d_out_reg_29_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 433  DFF  /d_out_reg[28]
+  (R) + 405  DFF  /d_out_reg_28_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 434  DFF  /d_out_reg[27]
+  (R) + 407  DFF  /d_out_reg_27_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 435  DFF  /d_out_reg[26]
+  (R) + 409  DFF  /d_out_reg_26_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 436  DFF  /d_out_reg[25]
+  (R) + 411  DFF  /d_out_reg_25_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 437  DFF  /d_out_reg[24]
+  (R) + 413  DFF  /d_out_reg_24_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 438  DFF  /d_out_reg[23]
+  (R) + 415  DFF  /d_out_reg_23_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 439  DFF  /d_out_reg[22]
+  (R) + 417  DFF  /d_out_reg_22_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 440  DFF  /d_out_reg[21]
+  (R) + 419  DFF  /d_out_reg_21_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 441  DFF  /d_out_reg[20]
+  (R) + 421  DFF  /d_out_reg_20_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 442  DFF  /d_out_reg[19]
+  (R) + 423  DFF  /d_out_reg_19_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 443  DFF  /d_out_reg[18]
+  (R) + 425  DFF  /d_out_reg_18_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 444  DFF  /d_out_reg[17]
+  (R) + 427  DFF  /d_out_reg_17_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 445  DFF  /d_out_reg[16]
+  (R) + 429  DFF  /d_out_reg_16_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 446  DFF  /d_out_reg[15]
+  (R) + 431  DFF  /d_out_reg_15_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 447  DFF  /d_out_reg[14]
+  (R) + 433  DFF  /d_out_reg_14_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 448  DFF  /d_out_reg[13]
+  (R) + 435  DFF  /d_out_reg_13_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 449  DFF  /d_out_reg[12]
+  (R) + 437  DFF  /d_out_reg_12_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 450  DFF  /d_out_reg[11]
+  (R) + 439  DFF  /d_out_reg_11_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 451  DFF  /d_out_reg[10]
+  (R) + 441  DFF  /d_out_reg_10_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 452  DFF  /d_out_reg[9]
+  (R) + 443  DFF  /d_out_reg_9_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 453  DFF  /d_out_reg[8]
+  (R) + 445  DFF  /d_out_reg_8_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 454  DFF  /d_out_reg[7]
+  (R) + 447  DFF  /d_out_reg_7_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 455  DFF  /d_out_reg[6]
+  (R) + 449  DFF  /d_out_reg_6_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 456  DFF  /d_out_reg[5]
+  (R) + 451  DFF  /d_out_reg_5_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 457  DFF  /d_out_reg[4]
+  (R) + 453  DFF  /d_out_reg_4_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 458  DFF  /d_out_reg[3]
+  (R) + 455  DFF  /d_out_reg_3_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 459  DFF  /d_out_reg[2]
+  (R) + 457  DFF  /d_out_reg_2_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 460  DFF  /d_out_reg[1]
+  (R) + 459  DFF  /d_out_reg_1_/U$1/U$1
+
+Compared points are: Equivalent (reachable)
+  (G) + 461  DFF  /d_out_reg[0]
+  (R) + 461  DFF  /d_out_reg_0_/U$1/U$1
+
+324 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           130    194       324     
+================================================================================
+// Command: exit -f
