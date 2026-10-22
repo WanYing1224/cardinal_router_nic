@@ -2,6 +2,7 @@
     System Testbench for 16-Node 4x4 Gold Mesh (tb_gold_mesh_4x4.v)
     - Verifies multi-hop Dimension-Order (X-Y) routing across all 16 nodes
     - Dumps verification progress, payload comparison, and summary to ../out/tb_gold_mesh_4x4.out
+    - Dumps SimVision waveform database to simvision_mesh/
 ============================================================================================*/
 
 `timescale 1ns/1ps
@@ -27,6 +28,12 @@ module tb_gold_mesh_4x4;
     integer packets_sent;
     integer packets_received;
     integer i;
+
+    // Waveform Database Dump for SimVision (simvision_mesh)
+    initial begin
+        $shm_open("waveforms/simvision_mesh");
+        $shm_probe("AS");
+    end
 
     // Clock Generation: 250 MHz (Period = 4.0 ns)
     always #2.0 clk = ~clk;
@@ -144,13 +151,11 @@ module tb_gold_mesh_4x4;
         begin
             target_vc = pkt[63];
 
-            // Wait for target buffer's turn (Polarity matches phase: VC0 needs polarity 1, VC1 needs polarity 0)
             @(negedge clk);
             while (polarity[src_id] == target_vc || !peri[src_id]) begin
                 @(negedge clk);
             end
 
-            // Drive inputs on negedge
             pedi[src_id] = pkt;
             pesi[src_id] = 1'b1;
             packets_sent = packets_sent + 1;
@@ -181,7 +186,7 @@ module tb_gold_mesh_4x4;
 
             while (!received && cycle_count < timeout_cycles) begin
                 @(posedge clk);
-                #0.1; // Check immediately after rising edge
+                #0.1;
                 if (peso[dst_id] && pero[dst_id]) begin
                     received = 1;
                     packets_received = packets_received + 1;
@@ -217,18 +222,15 @@ module tb_gold_mesh_4x4;
     reg [63:0] pkt_test;
 
     initial begin
-        // Open results log file in out/ directory
-        fout = $fopen("../out/tb_gold_mesh_4x4.out", "w");
+        fout = $fopen("out/tb_gold_mesh_4x4.out", "w");
         if (fout == 0) begin
-            $display("ERROR: Failed to open ../out/tb_gold_mesh_4x4.out for writing!");
-            $finish;
+            fout = $fopen("tb_gold_mesh_4x4.out", "w");
         end
 
-        // Initialize state
         clk = 0;
         reset = 1;
         pesi = 16'h0000;
-        pero = 16'hFFFF; // Downstream always ready by default
+        pero = 16'hFFFF;
         errors = 0;
         packets_sent = 0;
         packets_received = 0;
@@ -241,9 +243,7 @@ module tb_gold_mesh_4x4;
         $fdisplay(fout, "       EE577B Phase 1: 4x4 Gold Mesh System Verification          ");
         $fdisplay(fout, "==================================================================");
 
-        // ---------------------------------------------------------------------
-        // Test 1: Reset & Synchronous Polarity Check
-        // ---------------------------------------------------------------------
+        // Test 1: Reset & Polarity Check
         $fdisplay(fout, "\n--- Test 1: Reset & Polarity Synchronization ---");
         repeat (5) @(posedge clk);
         #0.1;
@@ -254,11 +254,9 @@ module tb_gold_mesh_4x4;
             $fdisplay(fout, "[PASS] All 16 node polarities held at 0 during reset.");
         end
 
-        // Release reset
         @(negedge clk);
         reset = 0;
 
-        // Verify polarity toggling lockstep
         repeat (4) begin
             @(posedge clk);
             #0.1;
@@ -269,9 +267,7 @@ module tb_gold_mesh_4x4;
         end
         $fdisplay(fout, "[PASS] All 16 node polarities toggle synchronously.");
 
-        // ---------------------------------------------------------------------
-        // Test 2: Horizontal 1-Hop Traversal (Node 0 (0,0) -> Node 1 (1,0))
-        // ---------------------------------------------------------------------
+        // Test 2: Horizontal 1-Hop Traversal (Node 0 -> Node 1)
         $fdisplay(fout, "\n--- Test 2: Horizontal 1-Hop Traversal (0 -> 1) ---");
         pkt_test = build_packet(1'b0, 2'd1, 2'd0, 8'd1, 16'd0, 32'hAAAA_0001);
         fork
@@ -279,9 +275,7 @@ module tb_gold_mesh_4x4;
             expect_packet(1, pkt_test, 20);
         join
 
-        // ---------------------------------------------------------------------
-        // Test 3: Vertical 1-Hop Traversal (Node 0 (0,0) -> Node 4 (0,1))
-        // ---------------------------------------------------------------------
+        // Test 3: Vertical 1-Hop Traversal (Node 0 -> Node 4)
         $fdisplay(fout, "\n--- Test 3: Vertical 1-Hop Traversal (0 -> 4) ---");
         pkt_test = build_packet(1'b1, 2'd0, 2'd1, 8'd1, 16'd0, 32'hAAAA_0004);
         fork
@@ -289,9 +283,7 @@ module tb_gold_mesh_4x4;
             expect_packet(4, pkt_test, 20);
         join
 
-        // ---------------------------------------------------------------------
-        // Test 4: Diagonal Multi-Hop Traversals (Node 0 (0,0) -> Node 15 (3,3))
-        // ---------------------------------------------------------------------
+        // Test 4: Corner-to-Corner Traversal (Node 0 -> Node 15)
         $fdisplay(fout, "\n--- Test 4: Corner-to-Corner Traversal (Node 0 -> Node 15) ---");
         pkt_test = build_packet(1'b0, 2'd3, 2'd3, 8'd6, 16'd0, 32'hDEAD_BEEF);
         fork
@@ -299,9 +291,7 @@ module tb_gold_mesh_4x4;
             expect_packet(15, pkt_test, 40);
         join
 
-        // ---------------------------------------------------------------------
-        // Test 5: Reverse Traversal (Node 15 (3,3) -> Node 0 (0,0))
-        // ---------------------------------------------------------------------
+        // Test 5: Reverse Traversal (Node 15 -> Node 0)
         $fdisplay(fout, "\n--- Test 5: Reverse Traversal (Node 15 -> Node 0) ---");
         pkt_test = build_packet(1'b1, 2'd0, 2'd0, 8'd6, 16'd15, 32'hCAFE_BABE);
         fork
@@ -309,19 +299,17 @@ module tb_gold_mesh_4x4;
             expect_packet(0, pkt_test, 40);
         join
 
-        // ---------------------------------------------------------------------
         // Test 6: Concurrent Multi-Node Traffic
-        // ---------------------------------------------------------------------
         $fdisplay(fout, "\n--- Test 6: Concurrent Traffic Across Multiple Nodes ---");
         fork
             begin
-                send_packet(2, build_packet(1'b0, 2'd2, 2'd2, 8'd2, 16'd2, 32'h2222_1010)); // Node 2 -> Node 10
+                send_packet(2, build_packet(1'b0, 2'd2, 2'd2, 8'd2, 16'd2, 32'h2222_1010));
             end
             begin
-                send_packet(5, build_packet(1'b0, 2'd3, 2'd1, 8'd2, 16'd5, 32'h5555_0707)); // Node 5 -> Node 7
+                send_packet(5, build_packet(1'b0, 2'd3, 2'd1, 8'd2, 16'd5, 32'h5555_0707));
             end
             begin
-                send_packet(12, build_packet(1'b0, 2'd1, 2'd3, 8'd1, 16'd12, 32'hCCCC_1313)); // Node 12 -> Node 13
+                send_packet(12, build_packet(1'b0, 2'd1, 2'd3, 8'd1, 16'd12, 32'hCCCC_1313));
             end
             begin
                 expect_packet(10, build_packet(1'b0, 2'd2, 2'd2, 8'd2, 16'd2, 32'h2222_1010), 40);
@@ -334,32 +322,25 @@ module tb_gold_mesh_4x4;
             end
         join
 
-        // ---------------------------------------------------------------------
-        // Test 7: Downstream Backpressure (pero deasserted)
-        // ---------------------------------------------------------------------
+        // Test 7: Downstream Backpressure Handling
         $fdisplay(fout, "\n--- Test 7: Downstream Backpressure Handling ---");
-        pkt_test = build_packet(1'b1, 2'd1, 2'd1, 8'd2, 16'd0, 32'h9999_0505); // Node 0 -> Node 5
-        pero[5] = 1'b0; // Ejection node is not ready
+        pkt_test = build_packet(1'b1, 2'd1, 2'd1, 8'd2, 16'd0, 32'h9999_0505);
+        pero[5] = 1'b0;
 
         fork
             send_packet(0, pkt_test);
             begin
-                // Wait for packet to reach Node 5 output buffer
                 repeat (10) @(posedge clk);
                 #0.1;
                 if (peso[5] && !pero[5]) begin
                     $fdisplay(fout, "[PASS] Node 5 holding packet under backpressure (peso=1, pero=0)");
                 end
-                // Release backpressure
                 @(negedge clk);
                 pero[5] = 1'b1;
                 expect_packet(5, pkt_test, 20);
             end
         join
 
-        // ---------------------------------------------------------------------
-        // Simulation Summary
-        // ---------------------------------------------------------------------
         repeat (10) @(posedge clk);
 
         $fdisplay(fout, "\n==================================================================");
