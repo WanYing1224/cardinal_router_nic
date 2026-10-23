@@ -1,34 +1,28 @@
-================================================================================
-         EE577B Phase 1: Standalone Router Node Verification Report             
-         DUT Coordinate: (1, 1) | Target Clock: 250MHz (4.0ns)             
-================================================================================
+[PASS] Reset initialization
 
-[STATUS] Reset de-asserted at time 20000. Initial polarity = 0
+TEST 1: Left to Right
+[PASS] Left to Right
 
---- Test Case 1: Straight X-Routing (Left -> Right) ---
-[PASS] Test: to Right (X-Dir)
+TEST 2: Left to Down
+[PASS] Left to Down
 
---- Test Case 2: Turn Routing (Left -> Down) ---
-[PASS] Test: eft to Down Turn
+TEST 3: Up to Local PE
+[PASS] Up to Local PE
 
---- Test Case 3: Ejection to Local PE (Up -> PE) ---
-[PASS] Test: p to PE Ejection
+TEST 4: PE to Right
+[PASS] PE to Right
 
---- Test Case 4: Backpressure Handling on Right Port ---
-[PASS] Backpressure asserted: right_so correctly suppressed while right_ro=0
-[PASS] Test: Release Delivery
+TEST 5: Down to Up
+[PASS] Down to Up
 
---- Test Case 5: Contention & Rotating Priority (PE vs Left -> Down) ---
-[PASS] Contention Phase 1 Serviced: PE Packet (180000051111aaaa)
-[PASS] Contention Phase 2 Serviced: Left Packet (180000042222bbbb)
+TEST 6: Right to Left
+[PASS] Right to Left
 
-================================================================================
-                           VERIFICATION SUMMARY                                 
-================================================================================
- Total Tests Executed : 7
- Tests Passed         : 7
- Tests Failed         : 0
-
- OVERALL STATUS: >>> ALL TESTS PASSED SUCCESSFULLY <<< 
-
-================================================================================
+TEST 7: Handshake without blocking
+[PASS] Handshake without blocking
+[PASS] packet retained in output buffer
+[PASS] cking recovery: packet sent once
+[PASS] th packets received exactly once
+[PASS] th packets received exactly once
+[PASS] Arbitration: priority rotated
+Total=13 Passed=13 Failed=0
