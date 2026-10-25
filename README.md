@@ -47,31 +47,30 @@ The top-level entity arranges 16 `router_node` instances in a row-major Cartesia
 
 ```text
 ├── docs/
-│   ├── cardinal_nic diagram.png            # Microarchitecture block diagram for NIC
-│   ├── gold_mesh_4x4 diagram.png           # Interconnect diagram for 4x4 mesh
-│   ├── router_node diagram.jpg             # Router node datapath and control diagram
-│   ├── router_input_ctrl diagram.jpg       # Input controller and VC buffer schematic
-│   └── router_output_ctrl diagram.jpg      # Output arbiter and crossbar schematic
-├── out/
-│   ├── cardinal_nic.out                    # Automated test execution log for NIC
-│   ├── tb_gold_mesh_4x4.out                # Gather simulation log for 4x4 mesh
-│   └── tb_router_node.out                  # Unit simulation log for standalone router node
+│   ├── Cardinal NIC Module Waveform.png     # SimVision waveform dump for NIC transactions
+│   ├── Gold Mesh 4x4 Module Waveform.png    # SimVision waveform dump for 4x4 mesh gather tests
+│   ├── Router Node Module Waveform.png      # SimVision waveform dump for router node routing
+│   ├── cardinal_nic diagram.png             # Microarchitecture block diagram for NIC
+│   ├── gold_mesh_4x4 diagram.png            # Interconnect schematic for 16-node 2D mesh
+│   ├── router_input_ctrl diagram.jpg        # Input controller with dual-VC buffer queues
+│   ├── router_node diagram.jpg              # 5-port router node datapath and control diagram
+│   └── router_output_ctrl diagram.jpg       # Rotating-priority output arbiter & crossbar mux
 ├── rtl/
 │   ├── mesh/
-│   │   └── gold_mesh_4x4.v                 # Top-level 16-node 4x4 mesh entity
+│   │   └── gold_mesh_4x4.v                  # Top-level 16-node 4x4 mesh entity
 │   ├── nic/
-│   │   └── cardinal_nic.v                  # Network Interface Component RTL
+│   │   └── cardinal_nic.v                   # Network Interface Component RTL
 │   └── router/
-│       ├── router_input_ctrl.v             # Input controller with dual-VC buffers
-│       ├── router_output_ctrl.v            # Rotating-priority output controller
-│       └── router_node.v                   # 5-port Cardinal router node
+│       ├── router_input_ctrl.v              # Input controller with dual-VC buffers
+│       ├── router_output_ctrl.v             # Rotating-priority output controller
+│       └── router_node.v                    # 5-port Cardinal router node
 ├── tb/
-│   ├── tb_cardinal_nic.v                   # Self-checking testbench for NIC
-│   ├── tb_gold_mesh_4x4.v                  # Top-level mesh gather testbench
-│   └── tb_router_node.v                    # Standalone unit testbench for router node
-├── .gitignore                              # Ignores CAD logs, waveforms, and lockfiles
-├── EE577B-Phase-1-(Group-Project).md       # Initial project plan, architectural notes, and specifications
-└── README.md                               # Project documentation and quickstart guide
+│   ├── tb_cardinal_nic.v                    # Self-checking testbench for NIC
+│   ├── tb_gold_mesh_4x4.v                   # Top-level mesh gather testbench
+│   └── tb_router_node.v                     # Standalone unit testbench for router node
+├── .gitignore                               # Ignores CAD logs, waveforms, and lockfiles
+├── EE577B-Phase-1-(Group-Project).md        # Initial project plan, architectural notes, and specifications
+└── README.md                                # Project documentation and quickstart guide
 
 ```
 
